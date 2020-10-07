@@ -26,48 +26,59 @@ class Calculator {
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
     }
+    factorial(n) {
+        let answer = 1;
+        if (n == 0 || n == 1) {
+            return answer;
+        } else {
+            for (var i = n; i >= 1; i--) {
+                answer = answer * i;
+            }
+            return answer;
+        }
+    }
     compute() {
         let computation;
         const prev = parseFloat(this.previousOperand);
-        const current = parseFloat(this.currentOperand);
+        let current = parseFloat(this.currentOperand);
+        let current2 = 1;
         if (isNaN(prev) || isNaN(current)) return
-        switch (this.operation) {
-            case '+':
-                computation = prev + current;
-                break
-            case '-':
-                computation = prev - current;
-                break
-            case '*':
-                computation = prev * current;
-                break
-            case '/':
-                computation = prev / current;
-                break
-            default:
-                return
+        // switch (this.operation) {
+        //     case '+':
+        //         computation = prev + current;
+        //         break
+        //     case '-':
+        //         computation = prev - current;
+        //         break
+        //     case '*':
+        //         computation = prev * current;
+        //         break
+        //     case '/':
+        //         computation = prev / current;
+        //         break
+        //     default:
+        //         return
+        // }
+        else if (this.operation === '+') {
+            computation = prev + current;
+            console.log("here");
+        } else if (this.operation === '-') {
+            computation = prev - current;
+        } else if (this.operation === '*') {
+            computation = prev * current;
+        } else if (this.operation === '/') {
+            computation = prev / current;
+        } else if (this.operation === 'square') {
+            current === null;
+            computation = (prev * prev);
+        } else if (this.operation === 'root') {
+            computation = Math.sqrt(prev);
+        } else if (this.operation === 'factorial') {
+            computation = factorial(prev);
         }
         this.currentOperand = computation;
         this.operation = undefined;
         this.previousOperand = '';
-
-        if ((!isNaN(prev)) && current === '') {
-            switch (this.operation) {
-                case 'x2':
-                    computation = prev * prev;
-                    break
-                case 'root':
-                    computation = prev * current;
-                    break
-                case 'x!':
-                    computation = factorize;
-                    break
-                default:
-                    return
-            }
-            this.currentOperand = computation;
-            this.operation = undefined;
-        }
 
     }
 
