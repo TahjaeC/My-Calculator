@@ -2,41 +2,193 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Sansita Swashed', cursive;
 }
 
 body {
-    background-color: #34174F;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* font-weight: 400; */
+    font-size: 16px;
 }
 
-.calculator-grid {
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.grid-container {
+    border-radius: 20px;
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 90vh;
-    grid-template-columns: repeat(5, 100px);
-    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+    width: 400px;
+    height: 600px;
+    -webkit-box-shadow: 14px 11px 24px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 11px 24px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 11px 24px 0px rgba(0, 0, 0, 0.75);
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "results results results results"
+        "seven eight nine divide"
+        "four five six multiply"
+        "one two three minus"
+        "zero zero delete plus"
+        "clear clear clear point"
+        "root equal equal factorial";
 }
 
-.calculator-grid>button {
+.results {
+    border-radius: 20px 20px 0 0;
+}
+
+.equal {
+    grid-area: equal;
+    background-color: #087E8B;
+    color: white;
+}
+
+.divide {
+    grid-area: divide;
+    background-color: #087E8B;
+    color: white;
+}
+
+.zero {
+    grid-area: zero;
+    background-color: #2F4550;
+    color: white;
+}
+
+.point {
+    grid-area: point;
+    background-color: #087E8B;
+    color: white;
+}
+
+.multiply {
+    grid-area: multiply;
+    background-color: #087E8B;
+    color: white;
+}
+
+.minus {
+    grid-area: minus;
+    background-color: #087E8B;
+    color: white;
+}
+
+.plus {
+    grid-area: plus;
+    background-color: #087E8B;
+    color: white;
+}
+
+.seven {
+    grid-area: seven;
+    background-color: #2F4550;
+    color: white;
+}
+
+.eight {
+    grid-area: eight;
+    background-color: #2F4550;
+    color: white;
+}
+
+.nine {
+    grid-area: nine;
+    background-color: #2F4550;
+    color: white;
+}
+
+.four {
+    grid-area: four;
+    background-color: #2F4550;
+    color: white;
+}
+
+.five {
+    grid-area: five;
+    background-color: #2F4550;
+    color: white;
+}
+
+.six {
+    grid-area: six;
+    background-color: #2F4550;
+    color: white;
+}
+
+.one {
+    grid-area: one;
+    background-color: #2F4550;
+    color: white;
+}
+
+.two {
+    grid-area: two;
+    background-color: #2F4550;
+    color: white;
+}
+
+.three {
+    grid-area: three;
+    background-color: #2F4550;
+    color: white;
+}
+
+.clear {
+    grid-area: clear;
+    background-color: #2F4550;
+    color: white;
+}
+
+.delete {
+    grid-area: delete;
+    background-color: #2F4550;
+    color: white;
+}
+
+.root {
+    grid-area: root;
+    border-radius: 0 0 0 20px;
+    background-color: #087E8B;
+    color: white;
+}
+
+.factorial {
+    grid-area: factorial;
+    border-radius: 0 0 20px 0;
+    background-color: #087E8B;
+    color: white;
+}
+
+
+.grid-container>button {
     cursor: pointer;
-    font-size: 1.5rem;
-    border: 1px solid white;
+    font-size: 25px;
     outline: none;
-    background-color: #CCC9DC;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+
+.grid-container>button:hover {
+    background-color: white;
+    color: black;
     opacity: 75%;
 }
 
-.calculator-grid>button:hover {
-    opacity: 90%;
-}
-
-.span-two {
-    grid-column: span 2;
-}
-
-.output {
+.results {
     grid-column: 1 /-1;
     background-color: rgba(0, 0, 0, .55);
     display: flex;
@@ -48,19 +200,17 @@ body {
     word-break: break-all;
 }
 
-.output .previous-operand {
+.results .previous {
     color: white;
     opacity: 0.75;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.output .current-operand {
+.results .current {
     color: rgb(226, 181, 181);
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    color: rgb(226, 181, 181);
+    color: #2F4550;
 }

@@ -4,44 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style.css">
+
     <title>My Calculator</title>
 
 </head>
 
 <body>
-    <div class="calculator-grid">
+    <div class=container>
+        <!-- <div class="calculator-grid">
         <div class="output">
             <div data-previous-operand class="previous-operand"></div>
             <div data-current-operand class="current-operand"></div>
         </div>
         <button data-all-clear class="span-two">Clear</button>
-        <button data-delete>DEL</button>
-        <button data-operation>/</button>
-        <button data-number>1</button>
-        <button data-number>2</button>
-        <button data-number>3</button>
-        <button data-operation>*</button>
-        <button data-number>4</button>
-        <button data-number>5</button>
-        <button data-number>6</button>
-        <button data-operation>+</button>
-        <button data-number>7</button>
-        <button data-number>8</button>
-        <button data-number>9</button>
-        <button data-operation>-</button>
-        <button data-number>.</button>
-        <button data-number>0</button>
-        <button data-operation>root</button>
-        <button data-operation>square</button>
-        <button data-operation>factorial</button>
-        <button data-equals class="span-two">=</button>
+        <button class="one" data-delete>DEL</button>
+        <button class="two" data-operation>/</button>
+        <button class="three" data-number>1</button>
+        <button class="four" data-number>2</button>
+        <button class="five" data-number>3</button>
+        <button class="six" data-operation>*</button>
+        <button class="seven" data-number>4</button>
+        <button class="eight" data-number>5</button>
+        <button class="nine" data-number>6</button>
+        <button class="ten" data-operation>+</button>
+        <button class="zero" data-number>7</button>
+        <button class="one" data-number>8</button>
+        <button class="one" data-number>9</button>
+        <button class="one" data-operation>-</button>
+        <button class="one" data-number>.</button>
+        <button class="one" data-number>0</button>
+        <button class="one" data-operation>square</button>
+        <button class="one" data-operation>factorial</button>
+        <button class="one" data-equals class="span-two">=</button>
+    </div> -->
+        <div class="grid-container animate__animated animate__fadeInDown animate__delay-1s">
+            <div class="results">
+                <div data-previous-operand class="previous"></div>
+                <div data-current-operand class="current"></div>
+            </div>
+            <button data-equals class="equal">&#61;</button>
+            <button data-operation class="divide">/</button>
+            <button data-operation class="multiply">*</button>
+            <button data-operation class="minus">-</button>
+            <button data-operation class="plus">+</button>
+            <button data-number class="seven">7</button>
+            <button data-number class="eight">8</button>
+            <button data-number class="nine">9</button>
+            <button data-number class="four">4</button>
+            <button data-number class="five">5</button>
+            <button data-number class="six">6</button>
+            <button data-number class="one">1</button>
+            <button data-number class="two">2</button>
+            <button data-number class="three">3</button>
+            <button data-number class="zero">0</button>
+            <button data-number class="point">.</button>
+            <button data-all-clear class="span-two clear">AC</button>
+            <button class="delete" data-delete>DEL</button>
+            <button data-operation class="root">&#8730;</button>
+            <button data-operation class="factorial">x!</button>
+        </div>
+        <div class=footer>
+            Credits to Web Dev Simplified
+        </div>
     </div>
-    <div class=footer>
-        Credits to Web Dev Simplified
-    </div>
-
     <script src="script.js"></script>
 </body>
 

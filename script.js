@@ -21,6 +21,8 @@ class Calculator {
         if (this.currentOperand === '') return;
         if (this.previousOperand !== '') {
             this.compute();
+        } else if (this.previousOperand === 'x!' || this.previousOperand === '&#8730;' && this.currentOperand === null) {
+            this.compute();
         }
         this.operation = operation;
         this.previousOperand = this.currentOperand;
@@ -40,25 +42,8 @@ class Calculator {
     compute() {
         let computation;
         const prev = parseFloat(this.previousOperand);
-        let current = parseFloat(this.currentOperand);
-        let current2 = 1;
+        const current = parseFloat(this.currentOperand);
         if (isNaN(prev) || isNaN(current)) return
-        // switch (this.operation) {
-        //     case '+':
-        //         computation = prev + current;
-        //         break
-        //     case '-':
-        //         computation = prev - current;
-        //         break
-        //     case '*':
-        //         computation = prev * current;
-        //         break
-        //     case '/':
-        //         computation = prev / current;
-        //         break
-        //     default:
-        //         return
-        // }
         else if (this.operation === '+') {
             computation = prev + current;
             console.log("here");
@@ -68,12 +53,11 @@ class Calculator {
             computation = prev * current;
         } else if (this.operation === '/') {
             computation = prev / current;
-        } else if (this.operation === 'square') {
-            current === null;
-            computation = (prev * prev);
         } else if (this.operation === 'root') {
+            console.log('here');
             computation = Math.sqrt(prev);
         } else if (this.operation === 'factorial') {
+            console.log('here');
             computation = factorial(prev);
         }
         this.currentOperand = computation;
