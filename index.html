@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
     <link rel="stylesheet" href="style.css">
 
     <title>My Calculator</title>
@@ -63,8 +64,10 @@
             <button data-number class="point">.</button>
             <button data-all-clear class="span-two clear">AC</button>
             <button class="delete" data-delete>DEL</button>
-            <button data-operation class="root">&#8730;</button>
-            <button data-operation class="factorial">x!</button>
+            <button aria-label="Exponent - Raise a number to the power of another"
+                data-balloon-pos="left" data-operation class="root">exp</button>
+            <button aria-label="returns the natural logarithm (base e) of a number"
+            data-balloon-pos="right"data-operation class="factorial">log</button>
         </div>
         <div class=footer>
             Credits to Web Dev Simplified

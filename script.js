@@ -21,23 +21,10 @@ class Calculator {
         if (this.currentOperand === '') return;
         if (this.previousOperand !== '') {
             this.compute();
-        } else if (this.previousOperand === 'x!' || this.previousOperand === '&#8730;' && this.currentOperand === null) {
-            this.compute();
         }
         this.operation = operation;
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
-    }
-    factorial(n) {
-        let answer = 1;
-        if (n == 0 || n == 1) {
-            return answer;
-        } else {
-            for (var i = n; i >= 1; i--) {
-                answer = answer * i;
-            }
-            return answer;
-        }
     }
     compute() {
         let computation;
@@ -46,19 +33,16 @@ class Calculator {
         if (isNaN(prev) || isNaN(current)) return
         else if (this.operation === '+') {
             computation = prev + current;
-            console.log("here");
         } else if (this.operation === '-') {
             computation = prev - current;
         } else if (this.operation === '*') {
             computation = prev * current;
         } else if (this.operation === '/') {
             computation = prev / current;
-        } else if (this.operation === 'root') {
-            console.log('here');
-            computation = Math.sqrt(prev);
-        } else if (this.operation === 'factorial') {
-            console.log('here');
-            computation = factorial(prev);
+        } else if (this.operation === 'exp') {
+            computation = Math.pow(prev, current);
+        } else if (this.operation === 'log') {
+            computation = Math.log(prev, current);
         }
         this.currentOperand = computation;
         this.operation = undefined;
