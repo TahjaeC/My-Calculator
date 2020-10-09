@@ -214,3 +214,7 @@ body {
 .footer {
     color: #2F4550;
 }
+.tooltip{
+    --balloon-border-radius:10px;
+
+}
